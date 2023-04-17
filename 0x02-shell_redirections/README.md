@@ -10,10 +10,6 @@
 9. how to duplicate the last line in shell script? 
 10. how to remove files that are ".js"extension in shell script"
 11. how to count directories and subdirectories in shell script? 
-12. Create a script that displays the 10 newest files in the current directory.
-
-Requirements:
-
-One file per line
-Sorted from the newest to the oldest
+12. Create a script that displays the 10 newest files in the current directory. Requirements: a)One file per line. b)Sorted from the newest to the oldest
 13. how to sort out a unique list of words?
+14. Display lines containing the pattern “root” from the file /etc/passwd.
