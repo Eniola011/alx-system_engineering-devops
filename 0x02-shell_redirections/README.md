@@ -4,3 +4,4 @@
 3. how to display the content of two files simultaenously.
 4. how to display the last ten lines of a file?
 5. how to display the first ten lines of a file?
+6. how to print the thrid lines in a shell script?
