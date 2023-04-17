@@ -8,3 +8,4 @@
 7. create a new file in shell script
 8. how to write the result of ls -la inside a file in shell scripting?
 9. how to duplicate the last line in shell script? 
+10. how to remove files that are ".js"extension in shell script"
