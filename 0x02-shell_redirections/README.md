@@ -3,3 +3,4 @@
 2. how to display the content of a file.
 3. how to display the content of two files simultaenously.
 4. how to display the last ten lines of a file?
+5. how to display the first ten lines of a file?
