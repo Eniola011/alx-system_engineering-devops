@@ -7,3 +7,4 @@
 6. how to print the thrid lines in a shell script?
 7. create a new file in shell script
 8. how to write the result of ls -la inside a file in shell scripting?
+9. how to duplicate the last line in shell script? 
