@@ -4,4 +4,6 @@
 3. how to count the number of directories in the PATH?
 4. how to list environment variables?
 5. how to lists all local variables and environment variables, and functions?
+6. how to create a local variable in bash script?
+7. how to create a global variable in bash script?
 
