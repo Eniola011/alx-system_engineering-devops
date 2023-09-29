@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Display Best School 10 times using until loop
+# Display Best School 10 times using while loop
+# but for the 9th iteration, displays Best School and then Hi on a new line.
 call=1
 while [ $call -le 10 ];
 do
