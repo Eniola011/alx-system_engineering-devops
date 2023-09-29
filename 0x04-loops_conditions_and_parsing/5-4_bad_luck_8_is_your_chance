@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Display Best School 10 times using while loop
+# display "bad luck" for the 4th loop iteration
+# display "good luck" for the 8th loop iteration
+# display "Best School" for the other iterations
+# must use the while loop (for and until are forbidden)
+# must use the if, elif and else statements
+call=1
+while [ $call -le 10 ];
+do
+    if [ $call -eq 4 ];
+then
+        echo "bad luck"
+    elif [ $call -eq 8 ];
+then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    call=$((call + 1))
+done
