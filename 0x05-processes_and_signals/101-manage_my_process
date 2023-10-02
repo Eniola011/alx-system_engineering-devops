@@ -14,8 +14,8 @@
 # Creates a file containing its PID in /var/run/my_process.pid
 # Displays manage_my_process restarted
 # Displays Usage: manage_my_process {start|stop|restart} if any other argument or no argument is passed.
-PIDFILE="/var/run/my_process.pid"
-PRGM="./manage_my_process"
+PIDFILE=/var/run/my_process.pid
+PRGM=manage_my_process
 
 if [ "$1" = "start" ];
 then
