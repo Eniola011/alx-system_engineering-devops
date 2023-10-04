@@ -14,3 +14,4 @@
 | Topic:3 | 0x03-shell_variables_expansions |
 | Topic:4 | 0x04-loops_conditions_and_parsing |
 | Topic:5 | 0x05-processes_and_signals |
+| Topic:6 | 0x06-regular_expressions |
