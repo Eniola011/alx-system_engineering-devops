@@ -16,3 +16,4 @@
 | Topic:5 | 0x05-processes_and_signals |
 | Topic:6 | 0x06-regular_expressions |
 | Topic:7 | 0x07-networking_basics |
+| Topic:8 | 0x08-networking_basics_2 |
