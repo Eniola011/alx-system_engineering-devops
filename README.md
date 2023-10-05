@@ -15,3 +15,4 @@
 | Topic:4 | 0x04-loops_conditions_and_parsing |
 | Topic:5 | 0x05-processes_and_signals |
 | Topic:6 | 0x06-regular_expressions |
+| Topic:7 | 0x07-networking_basics |
