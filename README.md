@@ -18,3 +18,4 @@
 | Topic:7 | 0x07-networking_basics |
 | Topic:8 | 0x08-networking_basics_2 |
 | Topic:9 | 0x0A-configuration_management |
+| Topic:10 | 0x0B-ssh |
