@@ -20,3 +20,4 @@
 | Topic:9 | 0x0A-configuration_management |
 | Topic:10 | 0x0B-ssh |
 | Topic:11 | 0x0C-web_server |
+| Topic:13 | 0x0F-load_balancer |
