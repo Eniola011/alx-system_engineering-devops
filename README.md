@@ -21,3 +21,5 @@
 | Topic:10 | 0x0B-ssh |
 | Topic:11 | 0x0C-web_server |
 | Topic:13 | 0x0F-load_balancer |
+| Topic:12 | 0x10-https_ssl |
+| Topic:14 | 0x13-firewall |
