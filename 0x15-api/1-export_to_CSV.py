@@ -7,6 +7,7 @@ extend your Python script to export data in the CSV format.
 
 import requests
 import sys
+import csv
 
 
 def employee_todo_progress(employee_ID):
@@ -20,17 +21,27 @@ def employee_todo_progress(employee_ID):
     todo_response = requests.get('{}/todos?userId={}'.format(url, employee_ID))
     todo_data = todo_response.json()
 
-    # calculate user's progress on tasks.
-    tasks = len(todo_data)
-    task = sum(task['completed'] for task in todo_data)
+    # csv file
+    csvfile = '{}.csv'.format(employee_ID)
 
-    # display user's progress on tasks.
-    print('Employee {} is done with tasks({}/{})'.format
-          (usr_data['name'], task, tasks))
-    # display user's completed tasks
-    for task in todo_data:
-        if task['completed']:
-            print("\t{}".format(task.get("title")))
+    # transfer infor into csv file.
+    with open(csvfile, mode='w', newline='') as employee_file:
+        fieldnames = ["USER_ID", "USERNAME",
+                   "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        employee_writer = csv.DictWriter(employee_file, fieldnames=fieldnames)
+        # write header.
+        employee_writer.writeheader()
+        # write tasks.
+        for task in todo_data:
+            employee_writer.writerow({
+                'USER_ID': employee_ID,
+                'USERNAME': usr_data['username'],
+                'TASK_COMPLETED_STATUS': 'Completed'
+                if task['completed'] else 'Incomplete',
+                'TASK_TITLE': task['title']
+            })
+
+    print('Data exported to {}'.format(csvfile))
 
 
 if __name__ == "__main__":
