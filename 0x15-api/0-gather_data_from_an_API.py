@@ -14,8 +14,9 @@ def employee_todo_progress(employee_ID):
     # fetch user details.
     usr_response = requests.get('{}/users/{}'.format(url, employee_ID))
     usr_data = usr_response.json()
-    print('Employee {} is done with tasks'.format
-          (usr_data.get('name')), end="")
+    usrname = usr_data.get("name")
+    sumtotal = 0
+    sumcount = 0
 
     # fetch todo tasks for the user.
     todo_response = requests.get('{}/todos?userId={}'.format(url, employee_ID))
@@ -24,11 +25,14 @@ def employee_todo_progress(employee_ID):
     # calculate user's progress on tasks.
     tasks = []
     for task in todo_data:
+        sumtotal += 1
         if task.get('completed') is True:
             tasks.append(task)
+            sumcount += 1
 
     # display user's progress on tasks.
-    print("{}/{}:".format(len(tasks), len(todo_data)))
+    print('Employee {} is done with tasks({}/{}):'.format
+          (usrname, sumcount, sumtotal))
     # display user's completed tasks
     for task in tasks:
         print("\t{}".format(task.get("title")))
