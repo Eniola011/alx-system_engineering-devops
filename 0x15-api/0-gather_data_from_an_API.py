@@ -33,9 +33,5 @@ def employee_todo_progress(employee_ID):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 0-gather_data_from_an_API.py <employee_ID>")
-        sys.exit(1)
-
     employee_ID = int(sys.argv[1])
     employee_todo_progress(employee_ID)
