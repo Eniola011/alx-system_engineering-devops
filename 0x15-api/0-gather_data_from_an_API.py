@@ -31,11 +31,11 @@ def employee_todo_progress(employee_ID):
             sumcount += 1
 
     # display user's progress on tasks.
-    print('Employee {} is done with tasks({}/{}):'.format
+    print("Employee {} is done with tasks({}/{}):".format
           (usrname, sumcount, sumtotal))
     # display user's completed tasks
     for task in tasks:
-        print("\t{}".format(task.get("title")))
+        print("\t {}".format(task.get("title")))
 
 
 if __name__ == "__main__":
