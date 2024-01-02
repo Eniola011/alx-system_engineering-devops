@@ -5,9 +5,9 @@ extend your Python script to export data in the CSV format.
 """
 
 
+import csv
 import requests
 import sys
-import csv
 
 
 def employee_todo_progress(employee_ID):
@@ -27,7 +27,7 @@ def employee_todo_progress(employee_ID):
     # transfer infor into csv file.
     with open(csvfile, mode='w', newline='') as employee_file:
         fieldnames = ["USER_ID", "USERNAME",
-                   "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+                      "TASK_COMPLETED_STATUS", "TASK_TITLE"]
         employee_writer = csv.DictWriter(employee_file, fieldnames=fieldnames)
         # write header.
         employee_writer.writeheader()
@@ -42,6 +42,17 @@ def employee_todo_progress(employee_ID):
             })
 
     print('Data exported to {}'.format(csvfile))
+
+    with open(csvfile, mode='r') as filecsv:
+        file_content = filecsv.read()
+        print("CSV content:")
+        print(file_content)
+
+    expected_task = len(todo_data)
+    with open(csvfile, mode='r') as employee_file:
+        readcsv = csv.reader(employee_file)
+        header = next(readcsv)
+        task_count = sum(1 for row in readcsv)
 
 
 if __name__ == "__main__":
