@@ -18,12 +18,13 @@ def employee_todo_progress(employee_ID):
     todo_data = todo_response.json()
 
     tasks = len(todo_data)
-    task = sum(task)
+    task = sum(task['completed'] for task in todo_data)
 
-    print('Employee {} is done with tasks({}/{})'.format(usr_data['name'], task, tasks))
-    print("({}/{}):".format(len(tasks), len(todo_data)))
-    for task in tasks:
-        print("\t {}".format(task.get("title")))
+    print('Employee {} is done with tasks({}/{})'.format
+          (usr_data['name'], task, tasks))
+    for task in todo_data:
+        if task['completed']:
+            print("\t{}".format(task.get("title")))
 
 
 if __name__ == "__main__":
