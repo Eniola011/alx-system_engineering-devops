@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A Python Script that uses "https://jsonplaceholder.typicode.com/"
 for a given employee ID, returns information about his/her TODO list progress.
+extend your Python script to export data in the CSV format.
 """
 
 
