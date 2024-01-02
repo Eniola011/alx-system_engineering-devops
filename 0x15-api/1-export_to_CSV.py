@@ -36,8 +36,8 @@ def employee_todo_progress(employee_ID):
             employee_writer.writerow({
                 'USER_ID': employee_ID,
                 'USERNAME': usr_data['username'],
-                'TASK_COMPLETED_STATUS': 'Completed'
-                if task['completed'] else 'Incomplete',
+                'TASK_COMPLETED_STATUS': 'True'
+                if task['completed'] else 'False',
                 'TASK_TITLE': task['title']
             })
 
@@ -45,9 +45,5 @@ def employee_todo_progress(employee_ID):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 0-gather_data_from_an_API.py <employee_ID>")
-        sys.exit(1)
-
     employee_ID = int(sys.argv[1])
     employee_todo_progress(employee_ID)
