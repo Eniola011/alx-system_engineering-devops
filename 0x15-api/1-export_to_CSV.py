@@ -16,43 +16,24 @@ def employee_todo_progress(employee_ID):
     # fetch user details.
     usr_response = requests.get('{}/users/{}'.format(url, employee_ID))
     usr_data = usr_response.json()
+    usrname = usr_data.get('username')
 
     # fetch todo tasks for the user.
     todo_response = requests.get('{}/todos?userId={}'.format(url, employee_ID))
     todo_data = todo_response.json()
-
+    tasks = []
+    for task in todo_data:
+        tasks.append([employee_ID, usrname, task.get('completed'),
+                     task.get('title')])
     # csv file
     csvfile = '{}.csv'.format(employee_ID)
-
-    # transfer infor into csv file.
-    with open(csvfile, mode='w', newline='') as employee_file:
-        fieldnames = ["USER_ID", "USERNAME",
-                      "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        employee_writer = csv.DictWriter(employee_file, fieldnames=fieldnames)
-        # write header.
-        employee_writer.writeheader()
-        # write tasks.
-        for task in todo_data:
-            employee_writer.writerow({
-                'USER_ID': employee_ID,
-                'USERNAME': usr_data['username'],
-                'TASK_COMPLETED_STATUS': 'True'
-                if task['completed'] else 'False',
-                'TASK_TITLE': task['title']
-            })
-
-    print('Data exported to {}'.format(csvfile))
-
-    with open(csvfile, mode='r') as filecsv:
-        file_content = filecsv.read()
-        print("CSV content:")
-        print(file_content)
-
-    expected_task = len(todo_data)
-    with open(csvfile, mode='r') as employee_file:
-        readcsv = csv.reader(employee_file)
-        header = next(readcsv)
-        task_count = sum(1 for row in readcsv)
+    with open(csvfile, mode='w') as employee_file:
+        employee_writer = csv.writer(employee_file,
+                                     delimiter=',',
+                                     quotechar='"',
+                                     quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            employee_writer.writerow(task)
 
 
 if __name__ == "__main__":
