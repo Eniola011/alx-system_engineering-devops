@@ -10,15 +10,15 @@ import requests
 import sys
 
 
-def export_data_json2(employee_ID):
+def export_data_json2():
     url = 'https://jsonplaceholder.typicode.com/'
 
     # fetch user details.
-    usr_response = requests.get('{}/users/{}'.format(url, employee_ID))
+    usr_response = requests.get('{}users'.format(url))
     usr_data = usr_response.json()
 
     # fetch todo tasks for the user.
-    todo_response = requests.get('{}/todos?userId={}'.format(url, employee_ID))
+    todo_response = requests.get('{}todos'.format(url))
     todo_data = todo_response.json()
     tasks_dict = {}
     for usr in usr_data:
@@ -36,10 +36,9 @@ def export_data_json2(employee_ID):
         tasks_dict.update({key: tasks_list})
 
     # json file
-    with open(todo_all_employees.json, mode='w') as employee_file:
+    with open('todo_all_employees.json', mode='w') as employee_file:
         json.dump(tasks_dict, employee_file)
 
 
 if __name__ == "__main__":
-    employee_ID = int(sys.argv[1])
-    export_data_json2(employee_ID)
+    export_data_json2()
