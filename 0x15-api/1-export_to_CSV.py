@@ -10,7 +10,7 @@ import requests
 import sys
 
 
-def employee_todo_progress(employee_ID):
+def export_data_csv(employee_ID):
     url = 'https://jsonplaceholder.typicode.com/'
 
     # fetch user details.
@@ -38,4 +38,4 @@ def employee_todo_progress(employee_ID):
 
 if __name__ == "__main__":
     employee_ID = int(sys.argv[1])
-    employee_todo_progress(employee_ID)
+    export_data_csv(employee_ID)
