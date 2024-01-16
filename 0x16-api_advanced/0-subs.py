@@ -13,9 +13,7 @@ def number_of_subscribers(subreddit):
     """ queries reddit api """
     headers = {'User-Agent': 'firstscript/1.0 by Exciting-Professor45'}
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    print(f"Status Code: {response.status_code}")
-    print(f"Response Content: {response.text}")
+    response = requests.get(url, headers=headers)
     if response.status_code != 200:
         return 0
     jdict = response.json()
