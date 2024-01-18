@@ -27,4 +27,8 @@
 | Topic:16 | 0x14-mysql |
 | Topic:17 | 0x0D-web_stack_debugging_0 |
 | Topic:18 | 0x15-api |
+<<<<<<< HEAD
 | Topic:19 | 0x17-web_stack_debugging_3 |
+=======
+| Topic:19 | 0x16-api_advanced |
+>>>>>>> e93ed303f026e03f80b44fda7d70049e3e654148
